@@ -1,0 +1,51 @@
+Objetivo:
+    Criar nossa API de Usuários
+    
+    - Criar um usuário
+    - Listar todos os usuários
+    - Editar um usuário
+    - Deletar um usuário
+
+
+
+As rotas precisam de duas coisas:
+    1) Tipo de Rota / Método HTTP
+    2) Endereço
+
+
+Funcionamento do HTTP
+HTTP Métodos
+GET - Listar    
+Post - Criar
+Put - Editar Vários
+Patch - Editar Um
+Delete - Deletar
+
+Query Params - Utilizado para realizar pesquisa etc
+Ex: http://localhost:3000/users?usuario=teste
+
+Route Paramns - Utilizado para pesquisar, deletar ou editar por algo específico
+ex: http://localhost:3000/users/teste
+
+Body Paramns(Post e PUT)
+EX:
+{
+    "nome":"Rodolfo","id":22
+}
+
+Como identificar uma resposta do backend?
+HTTP Status
+
+- 2xx -> Sucesso 
+    - resposta 201 significa que deu certo a requisição e criou o que foi pedido
+- 4xx -> Erro cliente - Problema no lado do front(ex: front tentando acessar uma rota que não existe)
+- 5xx -> Erro no servidor - erro no backend
+
+
+Na configuração do Prisma
+Executar no terminal o comando npx prisma db push para garantir que terminei a configuração
+
+Para acessar a interface gráfica do Prisma para ver o nosso banco, usar
+- npx prisma studio - para acessar a interface para visualizar o banco
+
+Quando utilizamos requisição promeses ou assíncrona, utilizamos await para que o Js espere ser realizado para depois continuar e evitar assim time out | Toda vez que utilizamos await, nossa função precisa ser assíncrona, colocando async a function
